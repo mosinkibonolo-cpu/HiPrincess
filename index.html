@@ -93,42 +93,39 @@
   <div class="hearts" id="hearts"></div>
 
   <script>
-    const yesBtn = document.getElementById('yes');
-    const noBtn = document.getElementById('no');
-    const card = document.getElementById('card');
-    const hearts = document.getElementById('hearts');
+  const yesBtn = document.getElementById('yes');
+  const noBtn = document.getElementById('no');
+  const card = document.getElementById('card');
+  const hearts = document.getElementById('hearts');
 
-    yesBtn.addEventListener('click', () => {
-      card.innerHTML = '<h1>Yay! 💕</h1><p>I can’t wait to spend Valentine’s Day with you 😍</p>';
-      for (let i = 0; i < 30; i++) createHeart();
-    });
+  yesBtn.addEventListener('click', () => {
+    card.innerHTML =
+      '<h1>Yay! 💕</h1><p>I can’t wait to spend Valentine’s Day with you, Princess 😍</p>';
+    for (let i = 0; i < 30; i++) createHeart();
+  });
 
-    noBtn.addEventListener('click', (e) => {
-      // Move the button to where the cursor is ("eating" it)
-      noBtn.style.position = 'absolute';
-      noBtn.style.left = e.clientX - noBtn.offsetWidth / 2 + 'px';
-      noBtn.style.top = e.clientY - noBtn.offsetHeight / 2 + 'px';
+  noBtn.addEventListener('click', (e) => {
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = e.clientX - noBtn.offsetWidth / 2 + 'px';
+    noBtn.style.top = e.clientY - noBtn.offsetHeight / 2 + 'px';
 
-      // Fun feedback
-      noBtn.textContent = '👀';
-      setTimeout(() => noBtn.textContent = 'No 🙃', 300);
-    });
-      const y = Math.random() * (window.innerHeight - 50);
-      noBtn.style.position = 'absolute';
-      noBtn.style.left = x + 'px';
-      noBtn.style.top = y + 'px';
-    });
+    noBtn.textContent = '👀';
+    setTimeout(() => {
+      noBtn.textContent = 'No 🙃';
+    }, 300);
+  });
 
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.innerHTML = '❤️';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = 3 + Math.random() * 3 + 's';
-      hearts.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-  </script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = 3 + Math.random() * 3 + 's';
+    hearts.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+</script>
+
 
 </body>
 </html>
